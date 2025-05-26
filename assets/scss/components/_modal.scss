@@ -1,0 +1,714 @@
+@charset "UTF-8";
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and stuff
+
+.modal-open {
+  // Kill the scroll on the body
+  overflow: hidden;
+
+  .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+.modal-draggble .modal-header {
+  cursor: move;
+}
+
+// Container that the modal scrolls within
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-modal;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  overflow: hidden;
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+  // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
+  // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
+  // See also https://github.com/twbs/bootstrap/issues/17695
+
+  &.modal-start,
+  &.start_pop {
+    position: absolute;
+    display: none;
+    max-width: 800px;
+    height: auto;
+    width: auto;
+    overflow: visible;
+
+    @include mdq-max(lg) {
+      left: 50% !important;
+      top: 15px !important;
+      width: 100%;
+      max-width: 90%;
+      transform: translateX(-50%);
+    }
+
+    .modal-dialog {
+      margin: 0 auto;
+      transform: none !important;
+    }
+    .modal-footer {
+      justify-content: space-between;
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+  .ui-draggable-handle {
+    cursor: move;
+  }
+
+  &.modal--xl {
+    .modal-dialog {
+      max-width: 400px;
+    }
+  }
+
+  &.modal--sm {
+    .modal-dialog {
+      max-width: 536px;
+    }
+  }
+
+  &.modal--md {
+    .modal-dialog {
+      max-width: 690px;
+    }
+  }
+
+  &.modal--auto{
+    .modal-dialog {
+        justify-content: center;
+    }
+
+    .modal-content{
+        width: auto;
+        margin: 0 auto;
+    }
+  }
+
+  &.show{
+    display: block !important;
+  }
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: $modal-dialog-margin;
+  // allow clicks to pass through for custom click handling to close modal
+  pointer-events: none;
+
+  // When fading in the modal, animate it to slide down
+  .modal.fade & {
+    //@include transition($modal-transition);
+    transform: $modal-fade-transform;
+  }
+  .modal.show & {
+    transform: $modal-show-transform;
+  }
+
+  // When trying to close, animate focus to scale
+  .modal.modal-static & {
+    transform: $modal-scale-transform;
+  }
+}
+
+.modal-dialog-scrollable {
+  display: flex; // IE10/11
+  max-height: subtract(100%, $modal-dialog-margin * 2);
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    max-height: subtract(100vh, $modal-dialog-margin * 2); // IE10/11
+    overflow: hidden;
+  }
+
+  .modal-header,
+  .modal-footer {
+    flex-shrink: 0;
+  }
+
+  .modal-body {
+    overflow-y: auto;
+    padding-top: 1.75rem;
+    padding-bottom: rem(40);
+  }
+
+  .modal-footer{
+    padding-top:10px;
+  }
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: subtract(100%, $modal-dialog-margin * 2);
+
+  // Ensure `modal-dialog-centered` extends the full height of the view (IE10/11)
+  &::before {
+    display: block; // IE10
+    height: subtract(100vh, $modal-dialog-margin * 2);
+    height: min-content; // Reset height to 0 except on IE
+    content: "";
+  }
+
+  // Ensure `.modal-body` shows scrollbar (IE10/11)
+  &.modal-dialog-scrollable {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    .modal-content {
+      max-height: none;
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  color: $modal-content-color;
+  pointer-events: auto;
+  background-color: $modal-content-bg;
+  background-clip: padding-box;
+  border: $modal-content-border-width solid $modal-content-border-color;
+  border-radius: 24px;
+  @include box-shadow($modal-content-box-shadow-xs);
+  outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-modal-backdrop;
+  width: 100vw;
+  height: 100vh;
+  // background-color: $modal-backdrop-bg;
+  background-color: transparent;
+
+  // Fade for backdrop
+  &.fade {
+    opacity: 0;
+  }
+  &.show {
+    // opacity: $modal-backdrop-opacity;
+    opacity: 1;
+  }
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+  display: flex;
+  align-items: flex-start; // so the close btn always stays on the upper right corner
+  justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
+  padding: $modal-header-padding;
+  padding-bottom: 0;
+  @include border-top-radius($modal-content-inner-border-radius);
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: $modal-header-padding 0 0;
+
+    & > i {
+      font-size: 42px;
+    }
+  }
+
+  & > *:not(.close){
+    margin-top: rem(50)
+  }
+
+  .inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom:10px;
+    border-bottom: 1px solid #e4e4e4;
+  
+    .modal-title{
+      padding-bottom:0;
+      border-bottom:0;
+      flex: 1;
+      width: auto;
+    }
+  }
+
+  @include mdq-max(lg) {
+    .close > i {
+      font-size: 21px;
+    }
+  }
+}
+
+.modal-title {
+    width: 100%;
+    padding: 8px 50px 10px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e4e4e4;
+    line-height: $modal-title-line-height;
+    font-family: "GmarketSans";
+    font-size: rem(32);
+    color: #1D1D1D;
+
+    .txt{
+        display: block;
+        margin: 5px 0;
+        font-family: 'Pretendard GOV';
+        font-size: 15px;
+        font-weight: 400;
+    }
+}
+
+.modal-body {
+  position: relative;
+  padding: $modal-inner-padding;
+
+  &.v2{
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .modal-title{
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .sc{
+    &-tit{
+        padding-bottom: 24px;
+        font-size: 19px;
+        font-weight: 700;
+    }
+
+    &-body{
+        .table-wrap{
+            &:first-child{
+                margin-top:0;
+            }
+
+            table tr>*{
+                font-size: 15px;
+            }
+        }
+
+        .btn-wrp{
+            justify-content: space-between;
+            margin-top: 24px;
+
+            .btn{
+                min-width: 0;
+            }
+        }
+    }
+  }
+}
+
+// Footer (for actions)
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; // vertically center
+  justify-content: center; // Right align buttons with flex property because text-align doesn't work on flex items
+  gap: .5rem;
+  padding: 0 $modal-inner-padding;
+  padding-bottom: rem(32);
+  @include border-bottom-radius($modal-content-inner-border-radius);
+
+  // Place margin between footer elements
+  // This solution is far from ideal because of the universal selector usage,
+  // but is needed to fix https://github.com/twbs/bootstrap/issues/24800
+
+  .check-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+// Scale up the modal
+@include media-breakpoint-up(sm) {
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    max-width: 1200px;
+    margin: $modal-dialog-margin-y-sm-up auto;
+  }
+
+  .modal-dialog-scrollable {
+    max-height: subtract(100%, $modal-dialog-margin-y-sm-up * 2);
+
+    .modal-content {
+      max-height: subtract(100vh, $modal-dialog-margin-y-sm-up * 2);
+    }
+  }
+
+  .modal-dialog-centered {
+    min-height: subtract(100%, $modal-dialog-margin-y-sm-up * 2);
+
+    &::before {
+      height: subtract(100vh, $modal-dialog-margin-y-sm-up * 2);
+      height: min-content;
+    }
+  }
+
+  .modal-content {
+    @include box-shadow($modal-content-box-shadow-sm-up);
+  }
+
+  .modal-sm {
+    max-width: $modal-sm;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .modal-lg,
+  .modal-xl {
+    max-width: $modal-lg;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .modal-xl {
+    max-width: $modal-xl;
+  }
+}
+
+// 2022-08-17 모달팝업에 스와이퍼 추가
+.start_pop__slider .modal-header {
+  z-index: 999;
+  border-bottom: 0;
+}
+.modal-swiper {
+  position: relative;
+  .swiper-pagination {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: unset;
+    row-gap: 5px;
+    column-gap: 5px;
+    &-bullet {
+      width: auto;
+      height: auto;
+      background: transparent;
+      padding: 10px 45px;
+      border-radius: 0;
+      border: 1px solid #ddd;
+      margin-bottom: -1px;
+      margin: 0 !important;
+      @include mdq-max(lg) {
+        padding: 5px 30px;
+      }
+    }
+  }
+  .swiper-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 24px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eeeeee78;
+    @include mdq-max(lg) {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+    &:hover {
+      color: $color-1;
+    }
+    &--prev {
+      left: 5px;
+    }
+    &--next {
+      right: 5px;
+    }
+  }
+}
+
+.modal-youtube-popup {
+  width: 100%;
+  min-width: 468px;
+  @include mdq-max(md) {
+    min-width: 100%;
+  }
+}
+
+@include mdq-max(md) {
+  .modal-content {
+    border-radius: 12px;
+  }
+
+  .modal-header {
+    padding: 20px 20px 0;
+
+    .close {
+      top: 14px;
+      right: 14px;
+      margin: 0;
+
+      .xi-close-thin {
+        font-size: 21px;
+      }
+    }
+  }
+
+  .modal-title {
+    font-size: 19px;
+  }
+
+  .modal-body {
+    padding: 30px 20px;
+  }
+}
+
+.modal-guide {
+  max-width: 100%;
+  padding: 20px;
+  text-align: center;
+
+  .modal-dialog {
+    max-width: 100%;
+  }
+
+  .modal-content {
+    background-color: transparent;
+  }
+
+  .modal-body {
+    padding: 10px;
+  }
+
+  .svi_logo {
+    display: inline-block;
+    width: rem(81);
+    height: rem(40);
+    margin-bottom: rem(40);
+    background: url(../images/sub/svi_logo_wh.svg) no-repeat center / 100% auto;
+  }
+
+  .txt {
+    font-family: "GmarketSans";
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+
+    & + .txt {
+      margin-top: rem(100);
+    }
+
+    &.d-inline-block {
+      display: inline-block;
+      text-align: left;
+    }
+
+    ul {
+      margin-top: 40px;
+      font-weight: 500;
+      text-align: left;
+
+      li {
+        display: flex;
+        align-items: flex-start;
+
+        &:not(:last-child) {
+          margin-bottom: rem(24);
+        }
+      }
+
+      p {
+        padding-top: 0.25em;
+      }
+    }
+  }
+
+  .btn-wrp{
+    margin-top:30px;
+  }
+
+  [class^="icon-guide"] {
+    width: rem(56);
+    height: rem(56);
+    margin-right: rem(24);
+  }
+
+  @for $i from 1 to 10 {
+    .icon-guide#{$i} {
+      background: url(../images/sub/icon_guide#{$i}.png)
+        no-repeat
+        center /
+        100%
+        auto;
+    }
+  }
+
+  .btn-wrp {
+    justify-content: center;
+
+    [class^="icon-"] {
+      width: rem(20);
+      height: rem(20);
+      margin-right: rem(12);
+    }
+
+    .icon-video {
+      background-image: url(../images/sub/icon_video.svg);
+    }
+
+    .icon-play {
+      background-image: url(../images/sub/icon_play.svg);
+    }
+  }
+
+  @include mdq-max(md) {
+    .svi-logo {
+      width: 60px;
+      margin-bottom: 24px;
+    }
+
+    .txt {
+      font-size: 17px;
+    }
+
+    .btn-wrp {
+      margin-top: 35px;
+    }
+  }
+}
+
+.modal-small {
+  .modal-content {
+    box-shadow: 10px 20px 40px 0px rgba(2, 49, 77, 0.2);
+    border: 0;
+    border-radius: 12px;
+  }
+
+  .modal-header {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+
+    .close {
+      margin: 0;
+      top: rem(24);
+      right: rem(28);
+
+      & > i {
+        font-size: rem(30);
+      }
+    }
+  }
+
+  .modal-body {
+    padding: rem(48) rem(40);
+    text-align: center;
+
+    & > *:not(:first-child) {
+      margin-top: rem(36);
+    }
+
+    &.v2 {
+      & > *:not(:first-child) {
+        margin-top: rem(32);
+      }
+    }
+
+    .txt {
+      font-size: rem(19);
+      font-weight: 400;    
+      word-break: break-all;
+
+      &.font-sans {
+        font-size: rem(20);
+        font-weight: 500;
+      }
+    }
+
+    .tit{
+      margin-top: 20px;
+      font-weight: 700;
+
+      & + .txt{
+        margin-top: rem(14);
+      }
+    }
+  }
+}
+
+.modal-privacy {
+  .modal-body{
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+  .tit {
+    margin-bottom: rem(12);
+    font-size: rem(19);
+  }
+
+  * + .tit{
+    margin-top: rem(40);
+  }
+
+  .txt {
+    font-size: rem(17);
+  }
+
+  .txt-block:not(:last-child) {
+    margin-bottom: rem(60);
+  }
+
+  .table-wrap {
+    border-bottom:0;
+  }
+}
+
+.modal-readonly{
+  input,
+  label,
+  select,
+  textarea {
+    pointer-events: none;
+  }
+}

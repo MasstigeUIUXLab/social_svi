@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.sub-visual {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // font-family: $ff-eng-sans-serif;
+  &__wrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    height: 400px;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @include mdq-max(sm) {
+      height: 50vw;
+      font-size: 2.5vw;
+    }
+  }
+  &__title {
+    width: 100%;
+    font-size: em(56);
+    letter-spacing: letterSpacing(-25);
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  &__txt {
+    margin-top: 1em;
+    font-size: em(18);
+    font-weight: 300;
+  }
+}

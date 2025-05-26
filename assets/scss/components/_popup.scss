@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+/* 기본 팝업 */
+.popup {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: rem(60) rem(50);
+  background-color: #fff;
+  border-radius: 0;
+
+  &.popup--lg {
+    max-width: 1200px;
+  }
+
+  &.popup--sm,
+  &.popup--privary {
+    max-width: 600px;
+    border-radius: 30px;
+    .text-bx {
+      overflow-y: scroll;
+      max-height: 500px;
+      padding: 0 rem(40) 0 0;
+    }
+    .popup-title-bx {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: rem(20);
+
+      @include mdq-max(md) {
+        margin-bottom: rem(20);
+        padding-bottom: 0;
+      }
+
+      .title {
+        font-size: rem(24);
+        font-weight: bold;
+        line-height: 1;
+        letter-spacing: normal;
+        margin-bottom: rem(40);
+
+        @include mdq-max(md) {
+          font-size: rem(20);
+          margin-bottom: rem(20);
+        }
+      }
+
+      .mfp-close {
+        width: fit-content;
+        height: fit-content;
+        line-height: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: rem(40);
+        margin-top: -5px;
+        @include mdq-max(md) {
+          font-size: rem(30);
+        }
+      }
+    }
+  }
+  &__title {
+    font-size: rem(20);
+  }
+
+  &.hide-close {
+    .mfp-close {
+      display: none !important;
+    }
+  }
+
+  &.popup-confirm{
+    min-width: 1200px;
+    padding: 0;
+  }
+
+  .tb-control .tb-tit{
+    font-size: 1rem;
+  }
+}
+
+/* 파일 다운로드 팝업 */
+.pop-file-download {
+  position: relative;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: rem(30);
+
+  .link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* 팝업 내부 팝업 */
+.pop-in-pop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(#000, 0.8);
+
+  .pop-in-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}

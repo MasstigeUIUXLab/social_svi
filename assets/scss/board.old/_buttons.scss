@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+// 버튼 공통 스타일
+[class*=' btn-type-'],
+[class^='btn-type-'],
+[class*=' btn-border-'],
+[class^='btn-border-'] {
+	border: 0;
+	min-width: em(100);
+	align-items: center;
+	justify-content: center;
+	display: inline-flex;
+	font-size: rem(17);
+	padding: 0 rem(15);
+	vertical-align: middle;
+	transition: 0.3s;
+
+	&.__small {
+		font-size: rem(14);
+	}
+	&.__xsmall {
+		font-size: rem(13);
+	}
+}
+
+// 버튼 클래스 구분자 $theme-colors 맵의 인덱스 번호로 부여
+@each $name, $color in $theme-colors {
+	$idx: index(($theme-colors), ($name $color)); // 인덱스 체크
+
+	.btn-type-0#{$idx} {
+		background-color: $color;
+		border: 1px solid $color;
+		color: #fff;
+
+		&:hover {
+			background-color: darken($color, 10%) !important;
+		}
+
+		&.__line {
+			background-color: $white;
+			color: $color;
+
+			&:hover {
+				background-color: $color !important;
+				color: $white;
+			}
+		}
+	}
+	.btn-border-0#{$idx} {
+		border: 1px solid $color;
+		background-color: #fff;
+		color: $color-1;
+		border-radius: 30px;
+
+		&:hover {
+			border-color: darken($color, 10%) !important;
+		}
+	}
+}
+
+// .btn-type-01 {
+//   background-color: $color-1;
+//   color: #fff;
+// }
+
+// .btn-type-02 {
+//   background-color: $color-2;
+//   color: #fff;
+// }
+
+// .btn-type-03 {
+//   background-color: #666;
+//   color: #fff;
+// }
+
+// .btn-type-04 {
+//   background-color: #222;
+//   color: #fff;
+// }
+
+///*상세보기 목록 버튼리스트*/
+.board_write_btn_bx {
+	position: relative;
+	text-align: right;
+	margin: 40px auto;
+	// a {
+	//   position: absolute;
+	//   top: 40px;
+	//   right: 0;
+	//   z-index: 2;
+
+	//   @include mdq-max(lg) {
+	//     position: static;
+	//     margin-top: 10px;
+	//     width: 100%;
+	//   }
+	// }
+}
+
+.board_view_btn_box {
+	margin: 40px auto;
+
+	@include mdq-max(lg) {
+		position: relative;
+
+		a {
+			width: 60px;
+			padding-left: 0;
+			padding-right: 0;
+			min-width: auto;
+
+			&:nth-child(2) {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			&:nth-child(3) {
+				position: absolute;
+				top: 0;
+				left: 65px;
+			}
+
+			&:nth-child(4) {
+				position: absolute;
+				top: 0;
+				left: 130px;
+			}
+		}
+	}
+}

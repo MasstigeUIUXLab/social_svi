@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+//공통사용 텍스트 스타일 정의
+@for $title from 20 through 60 {
+	$size: $title;
+
+	.common-title {
+		&--#{$size} {
+			font-size: rem($size);
+			line-height: 1.3;
+		}
+	}
+}
+
+@for $text from 10 through 19 {
+	$size: $text;
+
+	.common-text {
+		&--#{$size} {
+			font-size: rem($size);
+		}
+	}
+}

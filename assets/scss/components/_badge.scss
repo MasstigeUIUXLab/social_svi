@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@mixin badge-variant($name, $color) {
+  color: color-yiq($color);
+  background-color: $color;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.3em 0.552em;
+  border-radius: 4px;
+  font-size: em(15);
+  line-height: 1;
+
+  &.badge-sm {
+    font-size: em(12);
+  }
+
+  &.badge-lg {
+    font-size: em(18);
+  }
+
+  &.badge-pill {
+    border-radius: em(8);
+  }
+
+  &.round{
+    padding: 0.667em 1.37em;
+    border-radius: 1.25em;
+    font-weight: 700;
+  }
+}
+
+@each $name, $color in $theme-colors {
+  .badge-#{$name} {
+    @include badge-variant($name, $color);
+  }
+}

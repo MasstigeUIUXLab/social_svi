@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+.input_for {
+	width: 100%;
+}
+.input_50 {
+	width: 100%;
+	max-width: 500px;
+}
+.input_30 {
+	width: 100%;
+	max-width: 300px;
+}
+
+input,
+select,
+textarea {
+	font-size: 1rem;
+
+	@include mdq-max(md) {
+		font-size: 14px;
+	}
+}
+
+.table-btn-01,
+input[type='file'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+select {
+	height: $input-height;
+	border: solid 1px $input-border;
+	padding: 0 rem(16);
+	border-radius: rem(6);
+
+	&:disabled, &[readonly]{
+		border-color: #c6c6c6 !important;
+		background-color: #D8D8D8 !important;
+		pointer-events: none;
+		color:#717171 !important
+	}
+
+	@include mdq-max(lg) {
+		height: $input-height-lg;
+		border-radius: 4px;
+	}
+	
+	&.no-style{
+		height: auto;
+		padding: 10px;
+		border: 0;
+		background-color: transparent;
+	}
+}
+
+.read-bx{
+	border: solid 1px $input-border;
+	padding: 0.641rem  rem(16);
+	border-radius: rem(6);
+	font-size: rem(17);
+}
+
+select {
+	text-overflow: ellipsis;
+	width: 100%;
+	// background: url(../images/icon/select_down.png) no-repeat;
+	// background-position: 100% 50%;
+	// background-size: auto rem(15);
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	&.no-style{
+		margin: -5px 0;
+		background-position: calc(100% - 6px) center;
+	}
+
+	@at-root {
+		.lt-ie10 select {
+			font-family: inherit;
+			background: none;
+			padding: 0;
+
+			&:before {
+				display: block;
+				position: absolute;
+				content: '';
+				right: 0px;
+				top: 0px;
+				height: 1em;
+				width: 1em;
+				margin: 2px;
+				// background: red;
+				z-index: 5;
+			}
+		}
+
+		.lt-ie9 select {
+			font-family: inherit;
+			background: none;
+			padding: 6px;
+		}
+	}
+}
+
+textarea {
+	border: solid 1px $input-border;
+	background-color: #fff;
+	overflow: auto;
+	min-height: 124px;
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: rem(6);
+	resize: none;
+	padding: rem(16);
+
+	&.txtarea {
+		width: 100%;
+		overflow-y: auto;
+	}
+
+	&[rows]{
+		min-height: auto;
+	}
+
+	&:disabled, &[readonly]{
+		border-color: #c6c6c6 !important;
+		background-color: #D8D8D8 !important;
+		pointer-events: none;
+		color:#717171 !important
+	}
+}
+
+//나눔스퀘어등 사용시 password input 에서 타이핑표시(**)가 되지 않는 문제 fix
+input[type='password'] {
+	font-family: inherit;
+	font-family: 'Noto Sans KR', sans-serif;
+
+	&:placeholder-shown {
+		font-family: $font-family-sans-serif;
+	}
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	width: rem(18);
+	height: rem(18);
+
+	&:disabled, &[readonly]{
+		border-color: #c6c6c6 !important;
+		background-color: #D8D8D8 !important;
+		pointer-events: none;
+		color:#717171 !important
+	}
+}
+
+.area_for {
+	padding: rem(10);
+	width: 100%;
+	box-sizing: border-box;
+	height: 150px;
+	overflow-y: auto;
+}
+
+// 인풋커스텀
+.input_date {
+	background: url(../images/icon/i_calendar.png) no-repeat right center;
+	@include mdq-max(lg) {
+		background-size: 20px;
+	}
+}
+
+.input_find {
+	max-width: 500px;
+	$w: 100px;
+	padding-right: $w + 10px;
+	position: relative;
+
+	input {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.table-btn-01 {
+		width: $w;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0;
+	}
+
+	@include mdq-max(lg) {
+		$w: 70px;
+		padding-right: $w + 5px;
+		.table-btn-01 {
+			width: $w;
+		}
+	}
+}
+
+.input-area{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+
+    & > *:not([class*=w]) {
+        flex: 0 1 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+  
+    [class*=w] {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+    }
+
+
+    &:not(:first-child){
+        margin-top:8px;
+    }
+}

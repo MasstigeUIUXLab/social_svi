@@ -1,0 +1,14 @@
+<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="11.5" y1="6" x2="11.5" y2="1" stroke="#2D2D2D"/>
+<line x1="11.5" y1="6" x2="11.5" y2="1" stroke="black" stroke-opacity="0.2"/>
+<line x1="11.5" y1="6" x2="11.5" y2="1" stroke="black" stroke-opacity="0.2"/>
+<line x1="9" y1="3.5" x2="14" y2="3.5" stroke="#2D2D2D"/>
+<line x1="9" y1="3.5" x2="14" y2="3.5" stroke="black" stroke-opacity="0.2"/>
+<line x1="9" y1="3.5" x2="14" y2="3.5" stroke="black" stroke-opacity="0.2"/>
+<circle cx="5" cy="2.25" r="1.75" stroke="#2D2D2D"/>
+<circle cx="5" cy="2.25" r="1.75" stroke="black" stroke-opacity="0.2"/>
+<circle cx="5" cy="2.25" r="1.75" stroke="black" stroke-opacity="0.2"/>
+<path d="M0.5 8.87865C0.5 8.18183 0.783589 7.6009 1.29113 7.33814C2.05733 6.94146 3.29196 6.5 5 6.5C6.70803 6.5 7.94267 6.94146 8.70887 7.33814C9.21641 7.6009 9.5 8.18183 9.5 8.87865V9.5H0.5V8.87865Z" stroke="#2D2D2D"/>
+<path d="M0.5 8.87865C0.5 8.18183 0.783589 7.6009 1.29113 7.33814C2.05733 6.94146 3.29196 6.5 5 6.5C6.70803 6.5 7.94267 6.94146 8.70887 7.33814C9.21641 7.6009 9.5 8.18183 9.5 8.87865V9.5H0.5V8.87865Z" stroke="black" stroke-opacity="0.2"/>
+<path d="M0.5 8.87865C0.5 8.18183 0.783589 7.6009 1.29113 7.33814C2.05733 6.94146 3.29196 6.5 5 6.5C6.70803 6.5 7.94267 6.94146 8.70887 7.33814C9.21641 7.6009 9.5 8.18183 9.5 8.87865V9.5H0.5V8.87865Z" stroke="black" stroke-opacity="0.2"/>
+</svg>

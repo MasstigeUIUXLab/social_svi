@@ -1,0 +1,347 @@
+@charset "UTF-8";
+$header-fix: true; //true: 헤더가 상단 고정일 경우입니다.
+
+.header {
+  border-bottom: 1px solid #d8d8d8;
+  background-color: #fff;
+  width: 100%;
+  z-index: 500;
+  
+  @if ($header-fix == true) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @at-root html {
+      scroll-padding-top: $nav-height + $container-gutter-width/2; //input required 브라우저 메시지 포커싱 위치를 맞춰줍니다.
+    }
+  }
+  @include mdq-max(lg) {
+    @at-root html {
+      scroll-padding-top: $nav-height-lg + $container-gutter-width/2; //input required 브라우저 메시지 포커싱 위치를 맞춰줍니다.
+    }
+  }
+
+  &__top {
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  .util {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: $util-height;
+
+    &>* {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      padding: 0 12px;
+      line-height: 1;
+
+      &:before{
+        content:'';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 15px;
+        background-color: #d8d8d8;
+      }
+    }
+
+    .icon-search{
+      margin: 0;
+    }
+
+    &>*:first-child{
+			padding-left: 0;
+		}
+	  
+		&>*:last-child{
+			padding-right: 0;
+		  
+      &:before{
+        display: none;
+      }
+		}
+
+    .user-profile{
+      gap: 6px;
+
+      &-thumb{
+        position: relative;
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+        border-radius: 50%;
+        border: 1px solid #e4e4e4;
+
+        &:before{
+          content:'';
+          display: block;
+          padding-top:100%;
+        }
+
+        img{  
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          object-fit: contain;
+        }
+      }
+    }
+
+    .icon-message{
+      position: relative;
+      overflow: visible;
+
+      &:after{
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: #E71825;
+        transform: translate(25%, -25%);
+        opacity: 0;
+      }
+      
+      &.on:after{
+        opacity: 1;
+      }
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+
+    & > .nav {
+      margin-right: -20px;
+      margin-left: auto;
+    }
+
+    .logo {
+      display: flex;
+      gap: rem(32);
+
+      img{
+        height: rem(40);
+      }
+    }
+  }
+  
+  @include mdq-max(lg) {
+    &__top{
+      display: none;
+    }
+
+    &__wrap {
+      height: 60px;
+
+      .logo{
+        gap: 16px;
+
+        img{
+          height: 30px;
+        }
+      }
+    }
+  }
+  
+  @include mdq-max(md) {
+    &__wrap .logo{
+        gap: 8px;
+    }
+  }
+}
+
+.top-banner {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 510;
+  width: 100%;
+  height: $top-banner-height;
+  background-color: #047bc1;
+  font-size: 18px;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5;
+  overflow: hidden;        
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+    max-width: 1480px;
+  }
+
+  .small {
+    font-size: 16px;
+    color: #9bcae6;
+  }
+
+  a {
+    display: inline-block;
+    margin-left: auto;
+    font-size: 17px;
+    line-height: 1;
+
+    i{
+      font-size: .8em;
+    }
+  }
+
+  #btnBannerClose {
+    position: absolute;
+    right: 28px;
+
+    i{
+      margin-right: 0;
+    }
+
+    &:focus-visible{
+      outline: 1px solid #000;
+      -webkit-box-shadow: 0 0 0 2px #000;
+      box-shadow: 0 0 0 2px #000;
+    }
+  }
+
+  &-open{
+    .top-banner {
+      display: block;
+    }
+  }
+
+  @include mdq-max(xxxl) {
+    a{
+      margin-right: 10%;
+    }
+  }
+
+  @include mdq-max(lg) {
+    height: $top-banner-height-lg;
+    padding: 20px 0;
+    font-size: 17px;
+
+    .container{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
+    .small{
+      font-size: 14px;
+    }
+
+    a{
+      margin-top: auto;
+      margin-right: 0;
+      font-size: 16px;
+    }
+    
+    #btnBannerClose{
+      top: 15px;
+      right: 15px;
+
+      .icon-banner-close{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  @include mdq-max(md) {
+    padding: 15px 0;
+    font-size: 14px;
+
+    .container{
+      padding: 0 15px
+    }
+    
+    .small {
+      font-size: 13px;
+    }
+
+    a{
+      font-size: 15px;
+    }
+
+    #btnBannerClose .icon-banner-close {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.main-body,
+.sub-body {
+  @if ($header-fix == true) {
+    padding-top: $util-height + $nav-height;
+    @include mdq-max(lg) {
+      padding-top: $nav-height-lg;
+    }
+  }
+
+  &.top-banner-open:not(.is-scroll) {
+    @if ($header-fix == true) {
+      padding-top: $top-banner-height + $util-height + $nav-height;
+      @include mdq-max(lg) {
+        padding-top: $top-banner-height-lg + $nav-height-lg;
+      }
+    }
+
+    .header {
+      top: $top-banner-height;
+      @include mdq-max(lg) {
+        top: $top-banner-height-lg;
+      }
+    }
+
+    .top-banner{
+      transform: translateY(0%);
+    }
+  }
+
+  &.is-scroll {
+    .header{
+      top: 0;
+    }
+
+    .top-banner{
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+}
+
+.main {
+  min-height: 65vh;
+}
+
+// 스크롤
+.main-body,
+.sub-body {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #8e8e8e;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+  }
+}

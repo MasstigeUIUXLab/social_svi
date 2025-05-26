@@ -1,0 +1,241 @@
+@charset "UTF-8";
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+	height: 64px;
+  border: 1px solid #1d1d1d;
+  border-radius: 8px;
+  padding: 20px 25px;
+  font-size: 19px;
+  letter-spacing: 0;
+  line-height: 1;
+  transition: .3s;
+
+  &-wrp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: rem(12);
+    margin-top: rem(60);
+
+    &.full{
+      flex-direction: column;
+      gap: 10px;
+
+      &>*{
+        width: 100%;
+        justify-content: center;
+      }
+
+      .btn{
+          width: 100%;
+      }
+
+      &.nowrp{
+        flex-direction: row;
+
+        &>* {
+          flex: 1;
+          justify-content: center;
+        }
+      }
+    }
+
+    .btn{
+        min-width: 109px;
+
+      @include mdq-max(md) {
+        min-width: 0;
+      }
+    }
+  }
+
+  &-blue {
+    background: #2973D6 !important;
+    border-color: #2973D6 !important;
+    color: #fff !important;
+
+    @include hover {
+      background: #1d56bc !important;
+      border-color: #1d56bc !important;
+    }
+    
+    &:active{
+      background: #16408D !important;
+      border-color: #16408D !important;
+    }
+  }
+
+  &-blue2 {
+    background: $color-2 !important;
+    border-color: $color-2 !important;
+    color: #fff !important;
+  }
+
+  &-blue3 {
+    background: $blue !important;
+    border-color: $blue !important;
+    color: #fff !important;
+  }
+
+  &-red {
+    background: $red2 !important;
+    border-color: $red2 !important;
+    color: #fff !important;
+  }
+
+  &-green {
+    background: $green !important;
+    border-color: $green !important;
+    color: #fff !important;
+
+    @include hover {
+      background: #16a181 !important;
+      border-color: #16a181 !important;
+    }
+
+    &:active{
+      background: #067A5E !important;
+      border-color: #067A5E !important;
+    }
+  }
+
+  &-green2 {
+    background: #005C60 !important;
+    border-color: #005C60 !important;
+    color: #fff !important;
+  }
+
+  &-black {
+    background: #1D1D1D !important;
+    border-color: #1D1D1D !important;
+    color: #fff !important;
+  }
+  
+  &-orange {
+    background: #FF7146 !important;
+    border-color: #FF7146 !important;
+    color: #fff !important;
+
+    @include hover {
+      background: #A3482D !important;
+      border-color: #A3482D !important;
+    }
+    
+    &:active{
+      background: #421E12 !important;
+      border-color: #421E12 !important;
+    }
+  }
+  
+  &-gray {
+    background: #FAFAFA !important;
+    border-color: #EAEAEA !important;
+
+    [class^=icon-]{
+        filter: invert(40%);
+    }
+  }
+  
+
+  &-outline-blue {
+    background: #EFF5FF !important;
+    border-color: #246BEB !important;
+    color: #246BEB !important;
+  }
+
+  &-blue, &-blue2, &-blue3, 
+  &-green, &-green2, &-black, &-orange, &-red{
+    .icon-arr-blk {
+      background-image: url(../images/common/icon_arr.svg);
+    }
+  }
+
+  &-lg{
+    height: 56px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 56px !important;
+    min-width: auto;
+  }
+
+  
+  &-md{
+    height: 48px;
+    padding: 20px 16px;
+    line-height: 48px !important;
+  }
+
+  &-sm{
+    height: 44px;
+    padding: 20px 16px;
+    line-height: 44px !important;
+    font-size: 17px;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+  }
+
+  &-xl{
+    height: 30px !important;
+    line-height: 30px !important;
+    padding: 0 12px !important;
+    border-radius: 2px !important;
+    font-size: 13px !important;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+
+    [class^="icon-"]{
+        width: 12px;
+        height: 12px;
+      
+        &.icon-pdf, &.icon-pdf-wblk {
+            width: 16px;
+            height: 17px
+        }
+
+        &.icon-close-wh{
+            height: 13px;
+        }
+    }
+  }
+  
+  &-wide{
+    min-width: 392px !important;
+  }
+
+  &:disabled,
+  &.disabled {
+    background: #D8D8D8 !important;
+    border-color: #D8D8D8 !important;
+    pointer-events: none;
+    color:#717171 !important;
+  }
+
+  &-full{
+    width: 100%;
+    justify-content: center;
+  }
+
+  @include mdq-max(lg) {
+    height: 44px;
+    line-height: 44px;
+    border-radius: 4px;
+    padding: 14px 18px;
+    font-size: 15px;
+
+    &-md, &-sm{
+      height: 38px;
+      line-height: 38px;
+      padding: 10px 14px;
+      font-size: 13px;
+    }
+    
+    &-wide{
+      min-width: 0 !important;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,247 @@
+@charset "UTF-8";
+.sub-nav {
+  z-index: 100;
+  &--sticky {
+    &.fix {
+      // @at-root body,
+      //   html {
+      //   overflow-x: hidden;
+      //   position: relative;
+      // }
+      .sub-nav__wrap {
+        position: fixed;
+        left: 0;
+        // top: $nav-height;// PC 고정TOP값 : 스크립트로 대체
+        @include mdq-max(lg) {
+          top: $nav-height-lg;
+        }
+      }
+    }
+  }
+}
+
+.sub-nav--bar {
+  &,
+  .link {
+    height: rem(68);
+    @include mdq-max(lg) {
+      height: rem(50);
+    }
+  }
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  .link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: #333;
+    font-size: rem(16);
+    &.on,
+    &:hover {
+      color: $color-1;
+    }
+  }
+  .sub-nav {
+    &__wrap {
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mdq-max(xl) {
+        //내부 스크롤
+        text-align: center;
+        display: inline-block;
+        white-space: nowrap;
+        font-size: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: hidden;
+        width: 100%;
+        > li {
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
+.sub-nav--dropdown {
+  $sub-nav-height: 58px;
+  $sub-nav-height-lg: 50px;
+  $sub-nav-bg: #fff;
+  $sub-nav-color: #666;
+  $sub-nav-home: 86px; //lg 이상에서 홈 width
+  z-index: 101;
+  background: $sub-nav-bg;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  // box-shadow: 0 0.2em 0.5em rgba(#000, 0.2);
+  font-weight: 300;
+  letter-spacing: letterSpacing(-25);
+  height: $sub-nav-height;
+  @include mdq-max(lg) {
+    height: $sub-nav-height-lg;
+    border-bottom: 0;
+  }
+
+  .sub-nav {
+    &__wrap {
+      margin: 0 auto;
+      width: 100%;
+      background-color: $sub-nav-bg;
+      border-bottom: 1px solid #ddd;
+      // display: flex;
+      // align-items: center;
+
+      // 픽스되면서 너비 커질때 사용했던 소스 (아래 before)
+      // &:before {
+      //   content: '';
+      //   display: block;
+      //   background-color: $sub-nav-bg;
+      //   position: absolute;
+      //   left: 50%;
+      //   transform: translateX(-50%);
+      //   top: 0;
+      //   width: 200vw;
+      //   height: 100%;
+      //   border-bottom: 1px solid #ddd;
+      // }
+      @include mdq-max(md) {
+        padding: 0;
+      }
+    }
+    &__home {
+      height: $sub-nav-height;
+      color: $sub-nav-color;
+      width: $sub-nav-home;
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      img {
+        width: 22px;
+      }
+      @include mdq-max(lg) {
+        width: $sub-nav-height-lg;
+        height: $sub-nav-height-lg;
+        img {
+          width: 18px;
+        }
+      }
+    }
+
+    &__home:before,
+    &__home:after,
+    &__item:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      border-right: 1px solid rgba($sub-nav-color, 0.2);
+      $bar: 16px;
+      height: $bar;
+      margin-top: ($bar/-2);
+    }
+    &__home:before {
+      left: 0;
+    }
+    &__home:after,
+    &__item:after {
+      right: 0;
+    }
+
+    @include mdq-max(md) {
+      &__home:before,
+      &__item:last-child:after {
+        display: none;
+      }
+    }
+
+    &__item {
+      max-width: 220px;
+      width: calc(50% - #{$sub-nav-height-lg} / 2);
+      position: relative;
+    }
+
+    &__button {
+      @include text-truncate(1);
+      width: 100%;
+      height: $sub-nav-height;
+      color: $sub-nav-color;
+      display: block;
+      align-items: center;
+      text-align: left;
+      position: relative;
+      background-color: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0 2em;
+      padding-right: 4em;
+      cursor: pointer;
+      @include xi-icon('\e943');
+      &:before {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4em;
+        text-align: center;
+      }
+      &.on {
+        background-color: lighten($sub-nav-bg, 5%);
+        &:before {
+          content: '\e946';
+        }
+      }
+      @include mdq-max(lg) {
+        height: $sub-nav-height-lg;
+        padding: 0 1em;
+        padding-right: 2em;
+        &:before {
+          width: 2em;
+        }
+      }
+    }
+
+    &__drawer {
+      background-color: rgba($sub-nav-bg, 90%);
+      padding: 1em 2em;
+      box-sizing: border-box;
+      display: none;
+      text-align: left;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      line-height: 1.3;
+      @include mdq-max(lg) {
+        padding: 1em;
+      }
+      li {
+        margin-top: 0.8em;
+        &:nth-child(1) {
+          margin-top: 0;
+        }
+      }
+      .link {
+        color: $sub-nav-color;
+        font-weight: 400;
+
+        &.on {
+          text-decoration: underline;
+          color: $color-1;
+        }
+
+        &:hover {
+          opacity: 1;
+          text-decoration: underline !important;
+        }
+      }
+    }
+  }
+}

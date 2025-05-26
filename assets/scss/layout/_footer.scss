@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+.footer {
+	font-size: 17px;
+
+	&__family{
+		display: none;
+		position: relative;
+    	z-index: 1;
+		height: 54px;
+		border-top:1px solid #D8D8D8;
+		background:#fff;
+
+		.container{
+			display: flex;
+			height: 100%;
+		}
+
+		.dropdown{
+			display: inline-block;
+			height: 100%;
+			border-right: 1px solid #D8D8D8;
+			white-space: nowrap;
+
+			&:first-child{
+				border-left: 1px solid #D8D8D8;
+			}
+
+			&-toggle{
+				height: 100%;
+				padding: 0 24px;
+			}
+		}
+	}
+
+	&__wrap{
+		padding: 40px 0;
+		border-top:1px solid #D8D8D8;
+		// background: #F0F0F0;
+
+		.container{
+			position: relative;
+		}
+	}
+
+	&__logo{
+		display: flex;
+		gap: rem(32);
+
+		img {
+			height: rem(48);
+		}
+	}
+
+	&__info{
+		position: relative;
+		margin-top:rem(55);
+		padding-bottom:rem(40);
+		font-weight: 700;
+		$gutter: 7px;
+
+		.footer__txt{
+			.address{
+				font-weight: 400;
+			}
+			p:not(.address){
+				margin-top: $gutter;
+			}
+		}
+		
+		.footer__menu{
+			display: none !important;
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			&> *+ li{
+				margin-top: $gutter;
+			}
+		}
+	}
+
+	&__bottom{
+		padding-top:22px;
+		border-top: 1px solid #D8D8D8;
+
+		.footer__link li{
+			display: inline-block;
+			margin-right:26px;
+			margin-bottom: 10px;
+		}
+
+		.footer__copyright{
+			margin-top:12px;
+			color: #555;
+			font-size: 15px;
+		}
+	}
+
+	&__mark{
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 20px;
+	}
+
+	@include mdq-max(lg) {
+		font-size: 15px;
+
+		&__family{
+			height: 48px;
+
+			.dropdown>*{
+				font-size: 14px;
+			}
+		}
+
+		&__logo {
+			gap: 16px;
+
+			img {
+				height: 32px;
+			}
+		}
+
+		&__info{
+			margin-top: 30px;
+			padding-bottom: 20px;
+
+			.footer__menu{
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				position: relative;
+				margin-top: 30px;
+				font-weight: 500;
+
+				&>*+li{
+					margin-top:0;
+				}
+			}
+		}
+
+		&__bottom {
+			padding-top:20px;
+
+			.footer__link li{
+				margin-right: 10px;
+			}
+
+			.footer__copyright{
+				margin-top:12px;
+				font-size: 13px;
+			}
+		}
+
+		&__mark{
+			position: relative;
+			right: auto;
+			margin-top: 30px;
+			width: 60px;
+		}
+	}
+}

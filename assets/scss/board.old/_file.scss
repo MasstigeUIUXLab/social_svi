@@ -1,0 +1,440 @@
+@charset "UTF-8";
+
+.file-box {
+  &__text {
+    background-color: $white;
+    border: 1px solid $input-border;
+    line-height: 42px;
+    height: 40px;
+    overflow: hidden;
+    padding: 0 rem(15);
+  }
+
+  &__btn {
+  }
+
+  input {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%; //calc($btn + 2px);
+    height: 40px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    -webkit-appearance: none;
+    &::-webkit-file-upload-button {
+      cursor: pointer;
+    }
+  }
+}
+
+.file_box {
+  $btn: rem(100);
+  position: relative;
+  padding-right: $btn;
+  &:hover {
+    .btn_type_file {
+      background: #666;
+    }
+  }
+
+  .text_01 {
+    position: absolute;
+    top: 2px;
+    left: 0;
+  }
+
+  p {
+    border: 1px solid #ccc;
+    height: 40px;
+    height: 40px;
+    overflow: hidden;
+    padding: 0 10px;
+  }
+
+  .btn_type_file {
+    display: block;
+    width: $btn;
+    height: 40px;
+    height: 40px;
+    color: #fff;
+    background: #999;
+    font-weight: 300;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+    &:hover {
+      background: #666;
+    }
+  }
+
+  input {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%; //calc($btn + 2px);
+    height: 40px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+}
+
+// file 다중선택 (커스텀)
+.file-label {
+  display: inline-block;
+  position: relative;
+  $btn: rem(76);
+
+  &:hover {
+    .btn-blue {
+      background: #1d56bc;
+      border-color: #1d56bc;
+    }
+
+    .btn-green {
+      background: #16a181;
+      border-color: #16a181;
+    }
+  }
+
+  &:active {
+    .btn-blue {
+      background: #16408d;
+      border-color: #16408d;
+    }
+
+    .btn-green {
+      background: #067a5e;
+      border-color: #067a5e;
+    }
+  }
+
+  input[type="file"] {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-height: 100%;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+
+  &__btn {
+    display: inline-flex;
+    width: auto;
+    padding: 0 12px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    color: $white;
+    transition: 0.3s;
+  }
+
+  &:hover{
+    .file-label__btn{
+      text-decoration: underline;
+    }
+  }
+
+  @include mdq-max(lg) {
+    & + * {
+      margin-top: 5px;
+      margin-left: 0;
+    }
+  }
+}
+
+#file-preview {
+  &.file-add {
+    .file-preview__txt {
+      display: none;
+    }
+  }
+}
+
+.file {
+  &-control {
+    display: flex;
+    margin: 0;
+    margin-bottom: rem(10);
+
+    .btn-delete-all {
+      margin-right: rem(10);
+      margin-left: auto;
+    }
+
+    & > *:not(:first-child) {
+        margin-left: rem(8);
+    }
+  }
+
+  &-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+    text-align: left;
+
+    .item {
+      display: inline-flex;
+      align-items: flex-start;
+      padding: 6.25px 16px;
+      border: 1px solid #d8d8d8;
+      border-radius: 8px;
+      font-size: 17px;
+
+      .icon-close{
+        margin: 0;
+      }
+
+      .btn-delete-one {
+        margin-left: em(12);
+      }
+
+      [class*=btn-delete]{
+        display: inline-flex;
+      }
+    }
+
+    &.no-style {
+      align-self: center;
+      white-space: normal !important;
+
+      .item{
+        padding: 0;
+        border: 0;
+        font-size: 15px;
+        color:#555;
+
+        .icon-close{
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  
+    &-wrp{
+        margin-top: 24px;
+        padding: 0 !important;
+        border-radius: 12px;
+        border: 1px solid #e4e4e4;
+
+        .inner{
+            display: flex;
+        }
+
+        .th{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-basis: 21.858%;
+            background-color: #f8f8f8;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .td{
+            flex: 1;
+            text-align: left; 
+
+            .file-group{
+                padding: 16px;
+
+                &:not(:last-child){
+                    border-bottom: 1px solid #E4E4E4;
+                }
+            }
+        }
+
+        .form-row{
+            margin-top: 8px !important;
+            gap: 8px 12px;
+
+            .file-control{
+                margin-top: 3px;
+            }
+        }
+
+        .file-list{
+            padding: 8px 12px;
+            background: #f8f8f8;
+        }
+
+    }
+  
+  @include mdq-max(lg) {
+    &-control {
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+
+      .btn-delete-all {
+        margin-top: 10px;
+      }
+    }
+
+    &-list .item {
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+
+      span {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+
+      .btn-delete-one {
+        i {
+          margin: 0;
+        }
+
+        span {
+          visibility: hidden;
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+  }
+}
+
+/* 드래그 앤 드롭 형식 파일첨부 */
+.drop-box {
+  width: 800px;
+  height: 400px;
+  position: relative;
+
+  #drop-area {
+    border: 1px solid #ddd;
+    width: 100%;
+    height: 200px;
+    padding: 25px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+      content: "Drag & Drop";
+      display: block;
+      font-size: 50px;
+      font-weight: 500;
+      color: #eee;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }
+
+  #drop-area.highlight {
+    background-color: #e9f4ff;
+  }
+
+  #fileSelect {
+    background-color: #000;
+    height: 50px;
+    line-height: 50px;
+    width: 100px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -60px;
+  }
+
+  .file-item {
+    margin-bottom: 5px;
+  }
+
+  .file-item button {
+    margin-left: 10px;
+  }
+}
+
+/* 드래그 앤 드롭 개발 class 스타일 추 */
+.file-upload-box {
+  min-height: rem(150);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "Drag & Drop";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: 500;
+    color: #eee;
+    z-index: -1;
+    font-family: "arial";
+    width: 100%;
+    text-align: center;
+  }
+}
+.img_preview {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  border: 1px solid #ddd;
+}
+
+.editor-image-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: rem(10);
+}
+.editor-image-item {
+  position: relative;
+  flex: 1 0 20%;
+  max-width: 20%;
+  padding: 1% 0.5%;
+}
+.editor-image-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  @include img-to-bg(percentage(110/110));
+}
+.editor-image-delete {
+  position: absolute;
+  top: rem(8);
+  right: rem(8);
+  transform: translate(50%, -50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  background-color: #cecece;
+  background-image: url(/sadmin/images/image_delete.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.5rem auto;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: -9999px;
+  border: 0;
+  z-index: 1;
+}
