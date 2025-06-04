@@ -4850,3 +4850,66 @@ z
 	}
 
 }
+
+.popup-window{
+  padding-top: 0;
+
+  .modal-content{
+    border: 0;
+    border-radius: 0;
+  }
+
+  .modal-header{
+    & > *:not(.close){
+      margin-top: 40px;
+    }
+
+    .close{
+      margin-top: 40px;
+      
+      i{
+        font-size: 40px;
+      }
+    }
+  }
+
+   @include mdq-max(lg) {
+      .modal-header{
+          padding: 30px 30px 0;
+        
+          & > *:not(.close){
+            margin-top: 30px;
+          }
+          
+          .close{
+            margin-top: 30px;
+          }
+      }
+
+      .modal-body{
+        padding: 30px;
+      }
+    }
+    
+   @include mdq-max(md) {
+      .modal-header{
+          padding: 20px 20px 0;
+
+        & > *:not(.close){
+          margin-top: 20px;
+        }
+          
+        .close{
+          margin-top: 0;
+
+          i{
+            font-size: 24px;
+          }
+        }
+      }
+
+      .modal-body{
+        padding: 20px;
+      }
+   }
+}

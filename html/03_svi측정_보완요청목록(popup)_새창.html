@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="format-detection" content="telephone=no, address=no, email=no" />
+<meta name="title" content="한국사회적기업진흥원" />
+<meta name="keywords" content="" />
+<meta name="author" content="Masstige" />
+<meta name="description" content="" />
+<meta name="Robots" content="index, follow" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="한국사회적기업진흥원" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="한국사회적기업진흥원" />
+<meta property="og:url" content="" />
+<meta property="og:description" content="" />
+<!-- Twitter -->
+<meta name="twitter:image" content="" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:title" content="한국사회적기업진흥원" />
+<!-- Naver Webmaster Tool -->
+<meta name="naver-site-verification" content="" />
+<!-- Google Search Console -->
+<meta name="google-site-verification" content="" />
+<link rel="image_src" href="#" />
+<!-- 대표 이미지 -->
+<link rel="shortcut icon" href="#" />
+<!-- 파비콘 -->
+<link rel="canonical" href="#" />
+<!-- 대표 URL -->
+<!-- XEIcon -->
+<link rel="stylesheet" href="../assets/fonts/icons/xeicon/xeicon.css" />
+<!-- Masstige Custom Icon for Board Template -->
+<link rel="stylesheet" href="../assets/fonts/icons/icomoon/masstige-icons.css" />
+<!-- Google Material Icons -->
+<link rel="stylesheet" href="../assets/fonts/icons/material/material-icons.css" />
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="../assets/fonts/icons/bootstrap/bootstrap-icons.min.css" />
+<!-- Stylesheet -->
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css">
+<link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" /><!-- [D] 03-10 추가 -->
+<link rel="stylesheet" href="../assets/css/common.css" />
+<script src="../assets/js/lib/jquery-3.5.1.min.js"></script>
+<script src="../assets/js/lib/jquery-migrate-1.4.1.min.js"></script>
+<script src="../assets/js/lib/jquery-ui.min.js"></script>
+<script src="../assets/js/lib/popper.min.js"></script>
+<script src="../assets/js/lib/bootstrap.min.js"></script>
+<script src="../assets/js/lib/slick.min.js"></script>
+<script src="../assets/js/lib/wow.min.js"></script>
+<script src="../assets/js/lib/aos.min.js"></script>
+<script src="../assets/js/lib/jquery.magnific-popup.min.js"></script>
+<script src="../assets/js/lib/easings.min.js"></script>
+<script src="../assets/js/lib/swiper.min.js"></script>
+<script src="../assets/js/lib/jquery.scrollbar.min.js"></script>
+<script src="../assets/js/lib/jquery.mCustomScrollbar.min.js"></script>
+<script src="../assets/js/custom/nav_active-1.1.6.masstige.min.js"></script>
+<script src="../assets/js/custom/tab-1.1.0.masstige.js"></script>
+<script src="../assets/js/custom/resizingCheck-1.0.0.masstige.js"></script>
+<script src="../assets/js/custom/nav_drop-1.0.1.masstige.min.js"></script>
+<script src="../assets/js/custom/scroll_track-1.0.1.masstige.min.js"></script>
+<!-- [D] 달력 js/css -->
+<script src="../assets/js/lib/moment.min.js"></script>
+<script src="../assets/js/lib/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<!-- // -->
+<script src="../assets/js/common.js"></script>
+<!-- [D] * main은 main.min.css -->
+<link rel="stylesheet" href="../assets/css/sub.css" />
+<title></title>
+</head>
+
+<!-- [D] 06-04 새창팝업 관련 
+    * body에 popup-window 추가
+    * 기존 layer팝업에서 .modal-content부터 ctrl + c/v 
+    * 상단 <head> 영역 sub.css는 유지    
+--> 
+<body class="sub-body popup-window">
+
+<!-- 보완요청 목록(팝업) -->
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">
+            보완요청 목록
+            <span class="txt">보완요청 사항을 확인하시고 신청서 보완 후 보완마감일전까지 제출하여주시기 바랍니다.</span>
+        </h5>
+        <button type="button" class="close close-blue" data-dismiss="modal"><i class="xi-close-thin"></i><span class="sr-only">닫기</span></button>
+    </div>
+    <div class="modal-body">
+        <div class="sc">
+            <p class="sc-tit">보완요청 목록</p>
+            <div class="sc-body">
+                <!-- 표 -->
+                <div class="table-wrap border-bottom-0">
+                    <table class="no-style">
+                        <colgroup>
+                            <col width="11%">
+                            <col width="15.545%">
+                            <col width="34.7272%">
+                            <col width="7.6364%">
+                            <col width="10.455%">
+                            <col width="9.6364%">
+                            <col width="11%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">보완요청일시</th>
+                                <th scope="col">지표</th>
+                                <th scope="col">보완요청내용</th>
+                                <th scope="col">마감일</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">보완제출자</th>
+                                <th scope="col">보완제출일시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025.05.30 <br>16:15</td>
+                                <td class="text-left">2. 사회적 성과관리체계 <br>구축여부</td>
+                                <td class="text-left">전년도 사입계획서(또는 사입 결과보고서) 및 업무분장표, 사회적성과 관리보고서, 기타 신청서에 기재한 내용을 증빙하기 위해 제출하는 자료 일체를 보완해주세요.</td>
+                                <td> 2025.05.30</td>
+                                <td>보완제출</td>
+                                <td>조아요</td>
+                                <td>2025.05.30 <br>10:23</td>
+                            </tr>
+                            <tr>
+                                <td>2025.05.30 <br>16:15</td>
+                                <td class="text-left">2. 사회적 성과관리체계 <br>구축여부</td>
+                                <td class="text-left">전년도 사입계획서(또는 사입 결과보고서) 및 업무분장표, 사회적성과 관리보고서, 기타 신청서에 기재한 내용을 증빙하기 위해 제출하는 자료 일체를 보완해주세요.</td>
+                                <td> 2025.05.30</td>
+                                <td>보완제출</td>
+                                <td>조아요</td>
+                                <td>2025.05.30 <br>10:23</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- // -->
+
+                <div class="btn-wrp">
+                    <a href="#" class="btn btn-md" data-dismiss="modal">닫기</a>
+                    <a href="#" class="btn btn-blue btn-md">신청서 보완하기</a>
+                </div>
+            </div>
+        </div>
+    </div>       
+</div>
+<!-- // 보완요청 목록(팝업) -->
+
+</body>
+</html>
