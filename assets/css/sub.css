@@ -1540,7 +1540,12 @@
   width: 20px;
   height: 20px;
   border-radius: 0;
-  background-image: none !important;
+}
+.print-wrp .input-label.input-label--checkbox input:checked {
+  border-color: #717171;
+  background-color: #fff;
+  background-image: url(../images/sub/icon_chkbx_blk.svg);
+  background-size: 70%;
 }
 .print-wrp .tb-control .tb-tit {
   font-size: 21px;
@@ -1574,6 +1579,9 @@
   font-weight: 700;
   font-size: 21px;
 }
+.print-wrp .read-bx > strong .badge {
+  font-size: 21px;
+}
 .print-wrp .read-bx-label {
   display: inline-block;
   padding: 8px 11px 4px;
@@ -1584,13 +1592,14 @@
 }
 .print-wrp .read-bx .badge {
   padding: 12px;
+  font-size: 15px;
   background-color: #F8F8F8;
 }
 .print-wrp .read-bx .badge.bg-navy {
   background-color: #1D56BC;
   color: #fff;
 }
-.print-wrp .read-bx .row [class^=col] {
+.print-wrp .read-bx .row:not(.no-gutters) [class^=col] {
   padding: 0 8px;
 }
 .print-wrp *:not(.tb-control) + .read-bx-wrp {
@@ -1881,13 +1890,19 @@
     font-weight: 700;
     font-size: 15px;
   }
-  .print-wrp .read-bx-label {
+  .print-wrp .read-bx > strong .badge {
+    padding: 8px;
     font-size: 15px;
+  }
+  .print-wrp .read-bx-label {
+    padding: 4px 6px;
+    font-size: 12px;
   }
   .print-wrp .read-bx .badge {
     padding: 8px;
+    font-size: 13px;
   }
-  .print-wrp .read-bx .row [class^=col] {
+  .print-wrp .read-bx .row:not(.no-gutters) [class^=col] {
     padding: 0 6px;
   }
   .print-wrp *:not(.tb-control) + .read-bx-wrp {

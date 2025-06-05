@@ -1735,7 +1735,13 @@
         width: 20px;
         height: 20px;
         border-radius: 0;
-        background-image: none !important;
+      
+        &:checked{
+          border-color: #717171;
+          background-color: #fff;
+          background-image: url(../images/sub/icon_chkbx_blk.svg);
+              background-size: 70%;
+        }
       }
     }
   }
@@ -1780,7 +1786,11 @@
   
     & > strong{
       font-weight: 700;
-      font-size: 21px;
+      font-size: 21px; 
+      
+      .badge{
+        font-size: 21px;
+      }
     }
 
     &-label{
@@ -1794,6 +1804,7 @@
     
     .badge{
       padding: 12px;
+      font-size: 15px;
       background-color: #F8F8F8;
 
       &.bg-navy{
@@ -1802,7 +1813,7 @@
       }
     }
 
-    .row{
+    .row:not(.no-gutters){
       [class^=col]{
         padding: 0 8px;
       }
@@ -2187,17 +2198,24 @@
       & > strong{
         font-weight: 700;
         font-size: 15px;
+
+        .badge{
+          padding: 8px;
+          font-size: 15px;
+        }
       }
 
       &-label{
-        font-size: 15px;
+        padding: 4px 6px;
+        font-size: 12px;
       }
 
       .badge{
         padding: 8px;
+        font-size: 13px;
       }
 
-      .row{
+      .row:not(.no-gutters){
         [class^=col]{
           padding: 0 6px;
         }
