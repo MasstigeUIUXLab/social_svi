@@ -1400,6 +1400,30 @@
   margin-top: 1rem;
 }
 
+.print-view{
+  position: relative;
+  max-width: 1160px;
+  min-height: 297mm;
+  padding: 60px 40px !important;
+
+  .ct_ft{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    .title{
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .right{
+      margin-left: auto;
+    }
+  }
+
+}
+
 .print-wrp{
   &.bx-confirm{
     padding: 60px;
@@ -1498,17 +1522,300 @@
   }
  
   .tb-wrap{
-    border-radius: rem(20);
-    border: 1px solid #000;
+    margin: 0;
+  }
+
+ * + .tb-control{
+  margin-top: 40px;
+ }
+
+  .tb {
+    width: 100%;
+    border-collapse: collapse;
+    border-style: hidden;
+    border-radius: 0;
+    // box-shadow: 0 0 0 1px #e4e4e4;
+    border: 1px solid #e4e4e4;
     overflow: hidden;
 
+    input,
+    select,
+    textarea {
+      font-size: inherit;
+    }
+
+    tr {
+      border-bottom: 1px solid #e4e4e4;
+
+      & > * {
+        padding: 12px 16px;
+        font-size: 17px;
+        text-align: center;
+
+        &.th {
+          background-color: #f8f8f8;
+          font-weight: 500;
+          font-size: 17px;
+
+          .input-type-ab.disabled, .input-type-ab.readonly{
+              height: 35px;
+              border: 0 !important;
+              background-color: transparent !important;
+
+              input{
+                  height: auto;
+                  background-color: transparent !important;
+                  padding-left: 0;
+              }
+          }
+        }
+
+        p {
+          text-align: left;
+        }
+      }
+
+      & > th {
+        font-weight: 700;
+        font-size: 17px;
+      }
+    }
+
+    tbody tr {
+      &:last-child{
+        border-bottom: 0;
+      }
+      & > th{
+        padding: 10px 16px;
+      }
+    }
+
+    tfoot tr{
+      border-bottom: 0;
+      border-top: 1px solid #e4e4e4;
+
+      & > *{
+        &.border{
+          border: 0 !important;
+          border-right: 1px solid #e4e4e4 !important;
+        }
+      }
+    }
+
+    th {
+      background-color: #f8f8f8;
+        font-weight: 700;
+        border-right: 0;
+
+      &.border-0 {
+        background-color: #fff;
+      }
+
+      &.text-left, .text-left{
+        word-break: break-all;
+      }
+    }
+
+    td {
+      word-break: break-all;
+
+      tr > * {
+        font-size: 15px;
+      }
+
+      &.border-0 {
+        padding: 4px;
+      }
+
+      &.tb_input {
+        padding: 10px;
+      }
+
+      .no-style{
+          white-space: nowrap;
+      }
+
+      input.text-center{
+        padding: 3px;
+      }
+    }
+
+    input:not([type="radio"], [type="checkbox"]),
+    select,
+    textarea {
+      width: 100%;
+    }
+
+    .input-group label {
+      margin-top: 0;
+
+      &.w-100{
+        margin-top: rem(10);
+        margin-right: 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .form-tit {
+      font-size: inherit;
+      font-weight: 700;
+    }
+
+    .tb-control:first-child{
+      margin-top:0;
+    }
+
+    &.v2 {
+      // thead > tr > th,
+      // tfoot > tr > th:not(.border) {
+      //   border: 0;
+      // }
+      thead > tr > th{
+        border: 0;
+      }
+    }
+
+    &.border-gray {
+      border-radius: 0 !important;
+      border-top: none !important;
+    }
+
+    &.round {
+      border-radius: 12px !important;
+    }
+
+    &.tr-bg tr:nth-child(even) {
+      background-color: #fafbfd;
+    }
+
+    .bullet,
+    .list-bullet {
+      font-size: 15px;
+      text-align: left;
+    }
+
     .tb{
+      border-top: 0 !important;
+    }
+
+   .input-label{
+      input{
+        margin-top: 0;
+      }
+    }
+  }
+
+  .input-label{
+    display: inline-block;
+    font-size: inherit;
+    line-height: inherit;
+  
+    input{
+      margin-top: 0;
+      margin-right: 0;
+    }
+
+    .input-label__txt{
+      vertical-align: middle;
+      line-height: inherit;
+      margin-left: 0;
+    }
+
+    &.input-label--radio{
+      input{
+        width: 22px;
+        height: 22px;
+      }
+    }
+    &.input-label--checkbox{
+      input{
+        width: 20px;
+        height: 20px;
+        border-radius: 0;
+        background-image: none !important;
+      }
+    }
+  }
+
+  .tb-control {
+    .tb-tit {
+      font-size: 21px;
+    }
+
+    & + *{
+      margin-top: 10px !important;
+    }
+  }
+
+  .tb-wrap{
+    border-radius: 0;
+    border: 1px solid #E4E4E4;
+    overflow: hidden;
+    margin: 0px;
+
+    .tb{
+      width: 100%;
+      margin: 0px;
       border: 0 !important;
     }
   }
 
-  & > .title{
-    font-size: rem(32);
+  .table-group{
+    .tb-control{
+      margin-top: 0;
+    }
+  }
+
+  * + .table-group{
+    margin-top: 40px;
+  }
+
+  .read-bx{
+    border-color: #E4E4E4;
+    border-radius: 0;
+    font-size: 17px;
+  
+    & > strong{
+      font-weight: 700;
+      font-size: 21px;
+    }
+
+    &-label{
+      display: inline-block;
+      padding: 8px 11px 4px;
+      background: #EFF5FF;
+      font-weight: 600;
+      font-size: 17px;
+      color: #086EC2;
+    }
+    
+    .badge{
+      padding: 12px;
+      background-color: #F8F8F8;
+
+      &.bg-navy{
+        background-color: #1D56BC;
+        color: #fff;
+      }
+    }
+
+    .row{
+      [class^=col]{
+        padding: 0 8px;
+      }
+    }
+  } 
+  
+  *:not(.tb-control) + .read-bx-wrp{
+    margin-top: 40px;
+  }
+
+  & > .title, .ct_st > .title{
+    font-size: 2rem;
+    padding-bottom: 48px;
     font-weight: 700;
     text-align: center;
   }
@@ -1570,6 +1877,17 @@
   .popup.popup-confirm{
     min-width: 0;
     max-width: 500px !important;
+  }
+
+  .print-view{
+    max-width: 1100px !important;
+    padding: 40px !important;
+    
+    .ct_ft{
+      position: absolute;
+      bottom: 40px;
+      width: calc( 100% - 80px);
+    }
   }
 
   .print-wrp {
@@ -1653,17 +1971,251 @@
       }
     }
 
-    .tb-wrap {
+    .tb {
+      width: 100%;
+      border-collapse: collapse;
+      border-style: hidden;
+      border-radius: 0;
+      // box-shadow: 0 0 0 1px #e4e4e4;
+      border: 1px solid #e4e4e4;
       overflow: hidden;
-      margin-right: 0px;
-      
-      .tb {
+
+      input,
+      select,
+      textarea {
+        font-size: inherit;
+      }
+
+      tr {
+        border-bottom: 1px solid #e4e4e4;
+
+        & > * {
+          padding: 6px 12px;
+          font-size: 13px;
+          text-align: center;
+
+          &.th {
+            background-color: #f8f8f8;
+            font-weight: 500;
+            font-size: 13px;
+
+            .input-type-ab.disabled, .input-type-ab.readonly{
+                height: 35px;
+                border: 0 !important;
+                background-color: transparent !important;
+
+                input{
+                    height: auto;
+                    background-color: transparent !important;
+                    padding-left: 0;
+                }
+            }
+          }
+
+          p {
+            text-align: left;
+          }
+        }
+
+        & > th {
+          font-weight: 700;
+          font-size: 13px;
+        }
+      }
+
+      th {
+        background-color: #f8f8f8;
+        font-weight: 700;
+        border-right: 0;
+
+        &.border-0 {
+          background-color: #fff;
+        }
+
+        &.text-left, .text-left{
+          word-break: break-all;
+        }
+      }
+
+      td {
+        word-break: break-all;
+
+        tr > * {
+          font-size: 15px;
+        }
+
+        &.border-0 {
+          padding: 4px;
+        }
+
+        &.tb_input {
+          padding: 10px;
+        }
+
+        .no-style{
+            white-space: nowrap;
+        }
+
+        input.text-center{
+          padding: 3px;
+        }
+      }
+
+      input:not([type="radio"], [type="checkbox"]),
+      select,
+      textarea {
         width: 100%;
-        margin-right: 20px;
+      }
+
+      .input-group label {
+        margin-top: 0;
+
+        &.w-100{
+          margin-top: 6px;
+          margin-right: 0;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .form-tit {
+        font-size: inherit;
+        font-weight: 400;
+      }
+
+      .tb-control:first-child{
+        margin-top:0;
+      }
+
+      &.v2 {
+        // thead > tr > th,
+        // tfoot > tr > th:not(.border) {
+        //   border: 0;
+        // }
+        thead > tr > th{
+          border: 0;
+        }
+      }
+
+      &.border-gray {
+        border-radius: 0 !important;
+        border-top: none !important;
+      }
+
+      &.round {
+        border-radius: 12px !important;
+      }
+
+      &.tr-bg tr:nth-child(even) {
+        background-color: #fafbfd;
+      }
+
+      .bullet,
+      .list-bullet {
+        font-size: 15px;
+        text-align: left;
+      }
+
+      .tb{
+        border-top: 0 !important;
+      }
+
+      .input-label{
+        input{
+          margin-top: 0;
+        }
+      }
+    }
+
+  
+  .input-label{
+    display: inline-block;
+    font-size: inherit;
+    line-height: inherit;
+  
+    input{
+      margin-top: 0;
+      margin-right: 0;
+    }
+
+    .input-label__txt{
+      vertical-align: middle;
+      line-height: inherit;
+      margin-left: 0;
+    }
+
+    &.input-label--radio{
+      input{
+        width: 18px;
+        height: 18px;
+      }
+    }
+    &.input-label--checkbox{
+      input{
+        width: 16px;
+        height: 16px;
+        border-radius: 0;
       }
     }
   }
+    
+    .tb-control {
+      .tb-tit {
+        font-size: 15px;
+      }
 
+      & + *{
+        margin-top: 8px !important;
+      }
+    }
+      
+    .table-group{
+      .tb-control{
+        margin-top: 0;
+      }
+    }
+
+    * + .table-group{
+      margin-top: 20px;
+    }
+        
+    .read-bx{
+      font-size: 15px;
+    
+      & > strong{
+        font-weight: 700;
+        font-size: 15px;
+      }
+
+      &-label{
+        font-size: 15px;
+      }
+
+      .badge{
+        padding: 8px;
+      }
+
+      .row{
+        [class^=col]{
+          padding: 0 6px;
+        }
+      }
+    }
+
+    *:not(.tb-control) + .read-bx-wrp{
+      margin-top: 20px;
+    }
+
+    & > .title, .ct_st > .title{
+      font-size: 28px;
+      padding-bottom: 20px;
+      font-weight: 700;
+      text-align: center;
+      padding-top: 0;
+    }
+  }
 }
 
 .board-wrap{
@@ -1887,7 +2439,7 @@
       text-align: left;
     }
   }
-z
+
   &.v2 {
     border-bottom: 1px solid #e4e4e4;
 
@@ -4865,6 +5417,7 @@ z
     }
 
     .close{
+      display: none;
       margin-top: 40px;
       
       i{
