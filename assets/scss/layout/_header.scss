@@ -333,7 +333,7 @@ $header-fix: true; //true: 헤더가 상단 고정일 경우입니다.
 .sub-body {
   overflow-y: auto;
   &::-webkit-scrollbar {
-    width: 4px;
+    width: 10px;
   }
   &::-webkit-scrollbar-thumb {
     background: #8e8e8e;
