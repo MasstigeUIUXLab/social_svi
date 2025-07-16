@@ -352,203 +352,97 @@
         <!-- content -->
         <main class="main" id="contents">
             <!-- 페이지시작 -->
-            <div class="login">
+            <div class="login doc">
                 <div class="container">
                     <form action="">
                         <fieldset>
                             <legend></legend>
-                            <div class="tit-wrap text-center">
-                                <h2 class="tit">Login</h2>
-                                <p class="txt">회원 유형을 선택하세요.</p>
-                            </div>
-                            <div class="login-inner">
-                                <ul class="nav nav-tabs d-flex" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" data-toggle="tab" data-target="#cont1" type="button">공무원</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" data-toggle="tab" data-target="#cont2" type="button">진흥원</button>
-                                    </li>
-                                </ul>
-                                <!-- [D] 기존 영역 바깥에 .tab-content / .tab-pane 부분만 추가, 안쪽 영역은 기존하고 동일합니다. -->
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="cont1">
-                                        <div class="login-inner-wrap">
-                                            <!-- 행정전자서명 인증서 로그인 -->
-                                            <div class="bx">
-                                                <p class="bx-tit">행정전자 서명 인증서(GPKI) 로그인</p>
-                                                <div class="bx-body d-flex">
-                                                    <button class="btn-certification">
-                                                        <img src="../assets/images/icon/icon-certification.svg" alt="" loading="lazy" />
-                                                        <span>GPKI 로그인</span>
-                                                    </button>
-                                                    <p class="txt">공무원은 <strong>행정전자서명 인증서(GPKI)</strong>로 <br>로그인 해 주시기 바랍니다.</p>
+                            <div class="login-body">
+                                <div class="tit-wrap text-center">
+                                    <h2 class="tit">아이디 찾기</h2>
+                                    <p class="txt">사회적기업 포털에 등록된 아이디를 찾으실 수 있습니다. <br>아래 인증 수단 중 한가지를 선택해 주세요.</p>
+                                </div>
+                                <div class="section-inner doc-auth">
+                                    <div class="doc_cont_wrp">
+                                        <div class="doc_cont doc_cont1">
+                                            <div class="doc_cont_inner">
+                                                <h3 class="doc_cont_tit">휴대전화 본인확인</h3>
+                                                <i class="icon-doc-auth"></i>
+                                                <ul class="doc_bullet">
+                                                    <li>생년월일, 성명, 내/외국인, 휴대폰번호, 통신사를 입력하여 본인확인을 받습니다.</li>
+                                                    <li>본명 명의의 휴대전화가 아닐 경우 본인확인이 이루어지지 않습니다.</li>
+                                                </ul>
+                                                <div class="doc_btn_wrap">
+                                                    <button type="button" class="doc_btn doc_btn_green">휴대폰 인증</button>
                                                 </div>
                                             </div>
-                                            <!-- // 행정전자서명 인증서 로그인 -->
-
-                                            <!-- 아이디로 로그인 -->
-                                            <div class="bx">
-                                                <p class="bx-tit">아이디로 로그인</p>
-                                                <div class="bx-body">
-                                                    <div class="input-contain">
-                                                        <div class="input-wrap input-icon--1">
-                                                            <input type="text" id="id" name="id" placeholder="아이디" maxlength="30" />
-                                                            <label for="id"></label>
-                                                        </div>
-                                                        <div class="input-wrap">
-                                                            <input type="password" id="pw" name="pw" placeholder="비밀번호" maxlength="30" autocomplete="off"/>
-                                                            <label for="pw"></label>
-                                                        </div>
-                                                        <div class="input-wrap">
-                                                            <input type="text" id="bizNum" placeholder="사업자등록번호" maxlength="30" />
-                                                            <label for="bizNum"></label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="radio-contain d-flex">
-                                                        <div class="radio-wrap">
-                                                            <!-- [D] 02-03 변경된 부분 -->
-                                                            <label class="input-label input-label--checkbox">
-                                                                <input type="checkbox">
-                                                                <span class="input-label__txt">아이디저장</span>
-                                                            </label>
-                                                            <!-- // [D] 02-03 변경된 부분 -->
-                                                        </div>
-                                                        <div class="radio-wrap">
-                                                            <!-- [D] 02-03 변경된 부분 -->
-                                                            <label class="input-label input-label--checkbox">
-                                                                <input type="checkbox">
-                                                                <span class="input-label__txt">비밀번호저장</span>
-                                                            </label>
-                                                            <!-- // [D] 02-03 변경된 부분 -->
-                                                        </div>
-                                                    </div>
-                                                    <a href="00_main_로그인후.html" class="btn btn-blue">로그인 <i class="icon-arr-blk"></i></a>
-                                                </div>
-                                                <div class="bx-footer d-flex">
-                                                    <a href="javascript:;" class="util-btn">회원가입</a>
-                                                    <a href="javascript:;" class="util-btn">아이디찾기</a>
-                                                    <a href="javascript:;" class="util-btn">비밀번호찾기</a>
-                                                </div>
-                                            </div>
-                                            <!-- // 아이디로 로그인 -->
                                         </div>
-                                    </div>
-                                    <!-- [D] 02-04 새로 추가된 영역 -->
-                                    <div class="tab-pane" id="cont2">
-                                        <div class="login-inner-wrap">
-                                            <!-- 아이디로 로그인 -->
-                                            <div class="bx">
-                                                <p class="bx-tit">아이디로 로그인</p>
-                                                <div class="bx-body">
-                                                    <div class="input-contain">
-                                                        <div class="input-wrap input-icon--1">
-                                                            <input type="text" id="id2" name="id2" placeholder="아이디" maxlength="30" />
-                                                            <label for="id2"></label>
-                                                        </div>
-                                                        <div class="input-wrap">
-                                                            <input type="password" id="pw2" name="pw2" placeholder="비밀번호" maxlength="30" autocomplete="off"/>
-                                                            <label for="pw2"></label>
-                                                        </div>
-                                                        <div class="input-wrap">
-                                                            <input type="text" id="usrCode" placeholder="기관코드" />
-                                                            <label for="usrCode"></label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="radio-contain d-flex">
-                                                        <div class="radio-wrap">
-                                                            <!-- [D] 02-03 변경된 부분 -->
-                                                            <label class="input-label input-label--checkbox">
-                                                                <input type="checkbox">
-                                                                <span class="input-label__txt">아이디저장</span>
-                                                            </label>
-                                                            <!-- // [D] 02-03 변경된 부분 -->
-                                                        </div>
-                                                        <div class="radio-wrap">
-                                                            <!-- [D] 02-03 변경된 부분 -->
-                                                            <label class="input-label input-label--checkbox">
-                                                                <input type="checkbox">
-                                                                <span class="input-label__txt">비밀번호저장</span>
-                                                            </label>
-                                                            <!-- // [D] 02-03 변경된 부분 -->
-                                                        </div>
-                                                    </div>
-                                                    <a href="00_main_로그인후.html" class="btn btn-blue">로그인 <i class="icon-arr-blk"></i></a>
-                                                </div>
-                                                <div class="bx-footer d-flex">
-                                                    <a href="javascript:;" class="util-btn">회원가입</a>
-                                                    <a href="javascript:;" class="util-btn">아이디찾기</a>
-                                                    <a href="javascript:;" class="util-btn">비밀번호찾기</a>
-                                                </div>
-                                            </div>
-                                            <!-- // 아이디로 로그인 -->
-
-                                            <!-- 간편인증 -->
-                                            <div class="bx">
-                                                <p class="bx-tit">간편인증</p>
-                                                <div class="bx-body d-flex">
+                                        <div class="doc_cont doc_cont2">
+                                            <div class="doc_cont_inner">
+                                                <h3 class="doc_cont_tit">간편인증</h3>
+                                                <div class="btn-bx-container">
                                                     <div class="btn-bx">
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-kakao.png" alt="" loading="lazy" />
                                                             </div>
                                                             <p>카카오톡</p>
                                                         </button>
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-pass.png" alt="" loading="lazy" />
                                                             </div>
                                                             <p>통신사PASS</p>
                                                         </button>
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-naver.png" alt="" loading="lazy" />
                                                             </div>
                                                             <p>네이버</p>
                                                         </button>
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-toss.png" alt="" loading="lazy" />
                                                             </div>
                                                             <p>토스</p>
                                                         </button>
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-banksalad.png" alt="" loading="lazy" />
                                                             </div>
                                                             <p>뱅크샐러드</p>
                                                         </button>
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-kb.png" alt="" loading="lazy" />
                                                             </div>
                                                             <p>국민인증서</p>
                                                         </button>
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-sinhan.png" alt="" loading="lazy" />
                                                             </div>
                                                             <p>신한인증서</p>
                                                         </button>
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-payco.png" alt="" loading="lazy" />
                                                             </div>
                                                             <p>페이코</p>
                                                         </button>
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-hana.png" alt="" loading="lazy" />
                                                             </div>
                                                             <p>하나인증서</p>
                                                         </button>
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-samsungpass.png" alt="" loading="lazy" />
                                                             </div>
                                                             <p>삼성PASS</p>
                                                         </button>
-                                                        <button class="cfc-btn">
+                                                        <button type="button" class="cfc-btn">
                                                             <div class="img-wrap">
                                                                 <img src="../assets/images/icon/icon-dream.png" alt="" loading="lazy" />
                                                             </div>
@@ -557,25 +451,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- // 간편인증 -->
                                         </div>
                                     </div>
-                                    <!-- // -->
+                                    <div class="btn-bottom text-right">
+                                        <a href="javascript:;" class="util-btn">회원가입</a>
+                                        <a href="javascript:;" class="util-btn">비밀번호 찾기</a>
+                                    </div>
                                 </div>
-                                <!-- // -->
                             </div>
                         </fieldset>
                     </form>
-                    <div class="login-footer d-flex">
-                        <div class="logo-wrap d-flex">
-                            <div class="img-wrap">
-                                <img src="../assets/images/common/logo_icon.svg" alt="" />
-                            </div>
-                            <p class="font-sans">사회적기업포털</p>
-                        </div>
-                        <p class="copyright">Copyright@Korea Social Enterprise Promotion Agency. <br class="d-block d-sm-none" />All Contents Reserved</p>
-                        <a href="#" class="btn">공무원/관리자 로그인</a>
-                    </div>
                 </div>
             </div>
             <!-- // 페이지시작 -->
