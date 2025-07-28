@@ -4810,7 +4810,6 @@
 .login .login-inner-wrap .radio-contain {
   gap: 2rem;
   margin-top: 18px;
-  min-height: 24px;
 }
 .login .login-inner-wrap .radio-contain .radio-wrap {
   display: -webkit-box;
