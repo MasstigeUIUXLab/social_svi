@@ -575,6 +575,10 @@
 .quick-menu button:hover .icon-quick5 {
   background-color: #a3482d;
 }
+.quick-menu a:hover .icon-quick7,
+.quick-menu button:hover .icon-quick7 {
+  background-color: #FF5252;
+}
 .quick-menu a:active .icon-quick1,
 .quick-menu button:active .icon-quick1 {
   background-color: #683e1a;
@@ -595,6 +599,10 @@
 .quick-menu button:active .icon-quick5 {
   background-color: #421e12;
 }
+.quick-menu a:active .icon-quick7,
+.quick-menu button:active .icon-quick7 {
+  background-color: #FF5252;
+}
 .quick-menu .icon-quick1 {
   background-color: #ff9940;
 }
@@ -614,6 +622,9 @@
   background-color: #FFC9D0;
   background-position: 60% 60%;
 }
+.quick-menu .icon-quick7 {
+  background-color: #FFA2A2;
+}
 .quick-menu .icon-quick1 {
   background-image: url(../images/sub/icon_quick1.svg);
 }
@@ -631,6 +642,9 @@
 }
 .quick-menu .icon-quick6 {
   background-image: url(../images/sub/icon_quick6.svg);
+}
+.quick-menu .icon-quick7 {
+  background-image: url(../images/sub/icon_quick7.svg);
 }
 @media all and (max-width: 1400px) {
   .quick-menu {

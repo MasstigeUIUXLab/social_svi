@@ -604,6 +604,9 @@
       .icon-quick5 {
         background-color: #a3482d;
       }
+      .icon-quick7 {
+        background-color: #FF5252;
+      }
     }
 
     &:active {
@@ -621,6 +624,9 @@
       }
       .icon-quick5 {
         background-color: #421e12;
+      }
+      .icon-quick7 {
+        background-color: #FF5252;
       }
     }
   }
@@ -644,8 +650,11 @@
     background-color: #FFC9D0;
     background-position: 60% 60%;
   }
+  .icon-quick7 {
+    background-color: #FFA2A2;
+  }
 
-  @for $i from 1 through 6 {
+  @for $i from 1 through 7 {
     .icon-quick#{$i} {
       background-image: url(../images/sub/icon_quick#{$i}.svg);
     }
