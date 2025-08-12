@@ -42468,6 +42468,14 @@ html {
   border-color: #246BEB !important;
   color: #246BEB !important;
 }
+.btn-outline-green {
+  background-color: #fff;
+  border-color: #107C41 !important;
+  color: #107C41 !important;
+}
+.btn-outline-green:hover {
+  background: #f2fff7 !important;
+}
 .btn-blue .icon-arr-blk, .btn-blue2 .icon-arr-blk, .btn-blue3 .icon-arr-blk, .btn-green .icon-arr-blk, .btn-green2 .icon-arr-blk, .btn-black .icon-arr-blk, .btn-orange .icon-arr-blk, .btn-red .icon-arr-blk {
   background-image: url(../images/common/icon_arr.svg);
 }
@@ -42511,6 +42519,26 @@ html {
 .btn-xl [class^=icon-].icon-close-wh {
   height: 13px;
 }
+.btn-xs {
+  height: 40px !important;
+  line-height: 40px !important;
+  border-radius: 4px !important;
+  padding: 0 16px !important;
+  font-size: 18px !important;
+  min-width: 0 !important;
+  gap: 4px;
+  white-space: nowrap;
+}
+.btn-xxs {
+  height: 25px !important;
+  line-height: 25px !important;
+  border-radius: 4px !important;
+  padding: 0 8px;
+  font-size: 14px !important;
+  white-space: nowrap;
+  min-width: 56px;
+  gap: 4px;
+}
 .btn-wide {
   min-width: 392px !important;
 }
@@ -42539,6 +42567,13 @@ html {
     line-height: 38px;
     padding: 10px 14px;
     font-size: 13px;
+  }
+  .btn-xs {
+    height: 32px !important;
+    line-height: 32px !important;
+    border-radius: 4px !important;
+    padding: 0 12px !important;
+    font-size: 14px !important;
   }
   .btn-wide {
     min-width: 0 !important;

@@ -361,285 +361,152 @@
                     <div class="page-header">
                         <h2 class="tit">탁월우수기업조회</h2>
                     </div>
-
+					
 					<!-- [D] 포털과 동일한 부분 시작 -->
 					<div class="form-contain">
-						<div class="board-srch-bx">
-							<ul class="row">
-								<li class="col-12 col-md-6 col-lg">
-									<div class="form-group">
-										<div class="form-tit-wrp">
-											<p class="form-tit">지역</p>
-										</div>
-										<div class="form-input-group">
-											<select name="" class="form-control">
-												<option value="" selected disabled>선택</option>
-												<option value="">선택</option>
-											</select>
-										</div>
-									</div>
-								</li>
-								<li class="col-12 col-md-6 col-lg-5">
-									<div class="form-group">
-										<div class="form-tit-wrp">
-											<p class="form-tit">측정연도</p>
-										</div>
-										<div class="form-input-group">
-											<input type="text" name="" id="" class="datepicker form-control" data-type="single"/>
-											<input type="text" name="" id="" class="datepicker form-control" data-type="single"/>
-										</div>
-									</div>
-								</li>
-								<li class="col-12 col-md-6 col-lg">
-									<div class="form-group">
-										<div class="form-tit-wrp">
-											<p class="form-tit">조직형태</p>
-										</div>
-										<div class="form-input-group">
-											<select name="" class="form-control">
-												<option value="" selected disabled>선택</option>
-												<option value="">선택</option>
-											</select>
-										</div>
-									</div>
-								</li>
-								<li class="col-12 col-md-6 col-lg">
-									<div class="form-group">
-										<div class="form-tit-wrp">
-											<p class="form-tit">사회적기업 구분</p>
-										</div>
-										<div class="form-input-group">
-											<select name="" class="form-control">
-												<option value="" selected disabled>선택</option>
-												<option value="">선택</option>
-											</select>
-										</div>
-									</div>
-								</li>
-							</ul>
-							<div class="bottom">
-								<div class="flex-1">
-									<div class="form-group">
-										<div class="form-tit-wrp d-md-none">
-											<p class="form-tit">검색어</p>
-										</div>
-										<div class="form-input-group">
-											<input type="text" name="" value="" placeholder="검색어를 입력해주세요." class="form-control"/>
-										</div>
-									</div>
-								</div>
-								<div class="btn-wrp">
-									<button type="button" class="btn btn-outline">초기화</button>
-									<button type="button" class="btn btn-blue">검색</button>
+						<div class="form-sect">
+							<div class="form-header align-items-start">
+								<div class="tit normal align-self-end">
+									<ul class="sub">
+										<li>
+											<button type="button" class="btn-bookmark" onclick="$(this).toggleClass('on')">
+												<i class="icon-sub-bookmark"></i>
+												<span>스크랩</span>
+											</button>
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-sect">
 							<div class="form-header">
-								<h3 class="tit normal"><span>총 <strong class="text-primary">769</strong>건의 게시물이 있습니다.</span></h3>
-								<div class="btn-area">
-									<select name="" class="form-control">
-										<option value="" selected>등록순</option>
-										<option value="">마감순</option>
-									</select>
-									<a href="#" class="btn btn-xs btn-outline-green"><i class="icon-excel"></i>엑셀다운로드</a>
-								</div>
+								<h3 class="tit">기업정보</h3>
 							</div>
 
+							<!-- 표 -->
 							<div class="board-wrap">
-								<!-- 리스트 -->
-								<div class="board-type-card">
-									<ul class="card-list row">
-										<li class="col-12 col-lg-6 col-xl-4">
-											<a href="04_현황_탁월우수기업조회_상세.html" class="inner">
-												<div class="group">
-													<!-- [D] 
-														*** badge color
-
-														- badge2: 파랑
-														- badge3: 빨강
-														- badge4: 보라
-														- badge5: 초록
-														- badge6: 주황
-
-														* 07-23 수정
-														- 년도/등급만 남기고 삭제 
-
-														* 07-29 수정
-														- 사회적기업 구분 추가  
-													-->
-													<span class="badge badge5">2021년</span>
-													<span class="badge badge2">탁월</span>
-													<span class="badge badge3">사회적기업</span>
-												</div>
-												<p class="txt text-truncate-1">사회적협동조합도우누리</p>
-												<ul class="group column info-txt sm flex-1">
-													<li class="li_icon person">
-														<span>민동세</span>
-													</li>
-													<li class="li_icon address">
-														<strong>서울</strong>
-														<p>서울특별시 광진구 긴고랑로 41 301호</p>
-													</li>
-												</ul>
-												<button type="button" class="btn-icon btn-bookmark on"><span class="sr-only">즐겨찾기</span></button>
-											</a>
-										</li>
-										<li class="col-12 col-lg-6 col-xl-4">
-											<a href="04_현황_탁월우수기업조회_상세.html" class="inner">
-												<div class="group">
-													<span class="badge badge5">2021년</span>
-													<span class="badge badge2">탁월</span>
-													<span class="badge badge3">예비사회적기업</span>
-												</div>
-												<p class="txt text-truncate-1">㈜나우 (NAWOO)</p>
-												<ul class="group column info-txt sm flex-1">
-													<li class="li_icon person">
-														<span>김봉덕,심현주</span>
-													</li>
-													<li class="li_icon address">
-														<strong>경북</strong>
-														<p>경상북도 안동시 경북대로 585 (송현동)</p>
-													</li>
-												</ul>
-												<button type="button" class="btn-icon btn-bookmark on"><span class="sr-only">즐겨찾기</span></button>
-											</a>
-										</li>
-										<li class="col-12 col-lg-6 col-xl-4">
-											<a href="04_현황_탁월우수기업조회_상세.html" class="inner">
-												<div class="group">
-													<span class="badge badge5">2021년</span>
-													<span class="badge badge2">탁월</span>
-													<span class="badge badge3">사회적기업</span>
-												</div>
-												<p class="txt text-truncate-1">(주)행복더하기</p>
-												<ul class="group column info-txt sm flex-1">
-													<li class="li_icon person">
-														<span>유명곤</span>
-													</li>
-													<li class="li_icon address">
-														<strong>경기</strong>
-														<p>경기도 파주시 금물다리길 271, 3층(맥금동)</p>
-													</li>
-												</ul>
-												<button type="button" class="btn-icon btn-bookmark on"><span class="sr-only">즐겨찾기</span></button>
-											</a>
-										</li>
-										<li class="col-12 col-lg-6 col-xl-4">
-											<a href="04_현황_탁월우수기업조회_상세.html" class="inner">
-												<div class="group">
-													<span class="badge badge5">2021년</span>
-													<span class="badge badge2">탁월</span>
-													<span class="badge badge3">사회적기업</span>
-												</div>
-												<p class="txt text-truncate-1">사회적협동조합도우누리</p>
-												<ul class="group column info-txt sm flex-1">
-													<li class="li_icon person">
-														<span>민동세</span>
-													</li>
-													<li class="li_icon address">
-														<strong>서울</strong>
-														<p>서울특별시 광진구 긴고랑로 41 301호</p>
-													</li>
-												</ul>
-												<button type="button" class="btn-icon btn-bookmark on"><span class="sr-only">즐겨찾기</span></button>
-											</a>
-										</li>
-										<li class="col-12 col-lg-6 col-xl-4">
-											<a href="04_현황_탁월우수기업조회_상세.html" class="inner">
-												<div class="group">
-													<span class="badge badge5">2021년</span>
-													<span class="badge badge2">탁월</span>
-													<span class="badge badge3">사회적기업</span>
-												</div>
-												<p class="txt text-truncate-1">㈜나우 (NAWOO)</p>
-												<ul class="group column info-txt sm flex-1">
-													<li class="li_icon person">
-														<span>김봉덕,심현주</span>
-													</li>
-													<li class="li_icon address">
-														<strong>경북</strong>
-														<p>경상북도 안동시 경북대로 585 (송현동)</p>
-													</li>
-												</ul>
-												<button type="button" class="btn-icon btn-bookmark on"><span class="sr-only">즐겨찾기</span></button>
-											</a>
-										</li>
-										<li class="col-12 col-lg-6 col-xl-4">
-											<a href="04_현황_탁월우수기업조회_상세.html" class="inner">
-												<div class="group">
-													<span class="badge badge5">2021년</span>
-													<span class="badge badge2">탁월</span>
-													<span class="badge badge3">예비사회적기업</span>
-												</div>
-												<p class="txt text-truncate-1">(주)행복더하기</p>
-												<ul class="group column info-txt sm flex-1">
-													<li class="li_icon person">
-														<span>유명곤</span>
-													</li>
-													<li class="li_icon address">
-														<strong>경기</strong>
-														<p>경기도 파주시 금물다리길 271, 3층(맥금동)</p>
-													</li>
-												</ul>
-												<button type="button" class="btn-icon btn-bookmark on"><span class="sr-only">즐겨찾기</span></button>
-											</a>
-										</li>
-									</ul>
+								<div class="tb-wrap tb-mobile tb-column v2">
+									<table class="tb">
+										<colgroup>
+											<col width="14%">
+											<col width="calc( 50% - 14% )">
+											<col width="14%">
+											<col width="calc( 50% - 14% )">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>기업명</th>
+												<td class="text-left">
+													<div class="cell-mo">기업명</div>
+													<div class="cell">
+														주식회사0000
+													</div>
+												</td>
+												<th>대표자</th>
+												<td class="text-left">
+													<div class="cell-mo">대표자</div>
+													<div class="cell">
+														홍길동
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>사회서비스 분야</th>
+												<td class="text-left">
+													<div class="cell-mo">사회서비스 분야</div>
+													<div class="cell">
+														
+													</div>
+												</td>
+												<th>사회적목적 <br>실현유형</th>
+												<td class="text-left">
+													<div class="cell-mo">사회적목적 실현유형</div>
+													<div class="cell">
+														일자리제공형
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>주소</th>
+												<td colspan="3" class="text-left">
+													<div class="cell-mo">주소</div>
+													<div class="cell">서울특별시 광진구 긴고랑로 41 301호</div>
+												</td>
+											</tr>
+											<tr>
+												<th>지역</th>
+												<td colspan="3" class="text-left">
+													<div class="cell-mo">지역</div>
+													<div class="cell">
+														서울
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>조직형태</th>
+												<td class="text-left">
+													<div class="cell-mo">조직형태</div>
+													<div class="cell">
+														협동조합 기본법에 따른 협동조합
+													</div>
+												</td>
+												<th>사회적기업여부</th>
+												<td class="text-left">
+													<div class="cell-mo">사회적기업여부</div>
+													<div class="cell">
+														사회적기업
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>업종</th>
+												<td colspan="3" class="text-left">
+													<div class="cell-mo">업종</div>
+													<div class="cell">
+														보건업 및 사회복지 서비스업
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-								<!-- // -->
-
-								<!-- 페이징 -->
-							<div class="paging-area">
-								<ul>
-									<li>
-										<a href="javascript:;" class="prev-first"><span>맨앞으로</span></a>
-									</li>
-									<li>
-										<a href="javascript:;" class="prev"><span>이전</span></a>
-									</li>
-									<li>
-										<a href="javascript:;" class="active"><span>1</span></a>
-									</li>
-									<li>
-										<a href="javascript:;"><span>2</span></a>
-									</li>
-									<li>
-										<a href="javascript:;"><span>3</span></a>
-									</li>
-									<li>
-										<a href="javascript:;"><span>4</span></a>
-									</li>
-									<li>
-										<a href="javascript:;"><span>5</span></a>
-									</li>
-									<li>
-										<a href="javascript:;"><span>6</span></a>
-									</li>
-									<li>
-										<a href="javascript:;"><span>7</span></a>
-									</li>
-									<li>
-										<a href="javascript:;"><span>8</span></a>
-									</li>
-									<li>
-										<a href="javascript:;"><span>9</span></a>
-									</li>
-									<li>
-										<a href="javascript:;"><span>10</span></a>
-									</li>
-									<li>
-										<a href="javascript:;" class="next"><span>다음</span></a>
-									</li>
-									<li>
-										<a href="javascript:;" class="next-last"><span>맨뒤로</span></a>
-									</li>
-								</ul>
-							</div> 
-							<!-- // 페이징 -->
 							</div>
+							<!-- // -->
 						</div>
+
+						<div class="form-sect">
+							<div class="form-header">
+								<h3 class="tit">사회적가치지표(SVI) 측정결과</h3>
+							</div>
+
+							<!-- 표 -->
+							<div class="board-wrap">
+								<div class="tb-wrap table-style">
+									<table class="tb">
+										<colgroup>
+											<col width="14%">
+											<col width="calc( 50% - 14% )">
+											<col width="14%">
+											<col width="calc( 50% - 14% )">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>측정 년도</th>
+												<td>2021년</td>
+												<th>측정 결과</th>
+												<td>98점(탁월)</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- // -->
+						</div>			
+
+						<div class="btn-wrp">
+                            <button type="button" class="btn btn-lg btn-black"><span class="font-sans">목록</span></button>
+                        </div>
 					</div>
 					<!-- // -->
                 </div>

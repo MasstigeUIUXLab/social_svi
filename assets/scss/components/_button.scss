@@ -147,6 +147,16 @@
     color: #246BEB !important;
   }
 
+  &-outline-green {
+    background-color: #fff;
+    border-color: #107C41 !important;
+    color: #107C41 !important;
+
+    @include hover {
+      background: #f2fff7 !important;
+    }
+  }
+
   &-blue, &-blue2, &-blue3, 
   &-green, &-green2, &-black, &-orange, &-red{
     .icon-arr-blk {
@@ -161,7 +171,6 @@
     line-height: 56px !important;
     min-width: auto;
   }
-
   
   &-md{
     height: 48px;
@@ -201,6 +210,28 @@
         }
     }
   }
+
+  &-xs{
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 4px !important;
+    padding: 0 16px !important;
+    font-size: 18px !important;
+    min-width: 0 !important;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  &-xxs{
+    height: 25px !important;
+    line-height: 25px !important;
+    border-radius: 4px !important;
+    padding: 0 8px;
+    font-size: 14px !important;
+    white-space: nowrap;
+    min-width: 56px;
+    gap: 4px;
+  }
   
   &-wide{
     min-width: 392px !important;
@@ -231,6 +262,14 @@
       line-height: 38px;
       padding: 10px 14px;
       font-size: 13px;
+    }
+
+    &-xs{
+      height: 32px !important;
+      line-height: 32px !important;
+      border-radius: 4px !important;
+      padding: 0 12px !important;
+      font-size: 14px !important;
     }
     
     &-wide{
